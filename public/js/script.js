@@ -59,19 +59,3 @@ var swiper = new Swiper('.arrivals-slider', {
     },
 });
 
-var swiper = new Swiper('.reviews-slider', {
-    spaceBetween: 10,
-    loop: true,
-    slidesPerView: 'auto', // Menggunakan 'auto' agar tidak terlalu banyak slide yang terlihat
-    preventInteractionOnTransition: true, // Menghentikan interaksi pengguna selama transisi slide
-    loopedSlides: 3, // Jumlah buku yang terlihat pada satu waktu
-    on: {
-        slideChange: function () {
-            // Memeriksa apakah sudah mencapai slide terakhir
-            if (swiper.isEnd) {
-                // Kembali ke slide pertama setelah mencapai ujung
-                swiper.slideTo(0, 0);
-            }
-        },
-    },
-});

@@ -74,19 +74,19 @@
     <h1 class="heading"> <span>featured books</span> </h1>
     <div class="swiper-container featured-slider">
         <div class="swiper-wrapper">
-            <div class="swiper-slide box">
+            <!-- <div class="swiper-slide box">
                 <div class="image">
-                    <img src="{{$books[0]->image}}" alt="">
+                    <img src="" alt="">
                 </div>
                 <div class="content">
-                    <h3>{{ $books[0]->judul }}</h3>
-                    <div class="price">{{ $books[0]->harga-diskon}} <span>Rp {{ $books[0]->harga }}</span></div>
-                    <button id="infoButton" type="button" onclick="location.href='{{ $books[0]->link }}'">
+                    <h3></h3>
+                    <div class="price"><span>Rp </span></div>
+                    <button id="infoButton" type="button" onclick="location.href=''">
                         more info
                     </button>
                 </div>
-            </div>
-            <div class="swiper-slide box">
+            </div> -->
+            <!-- <div class="swiper-slide box">
                 <div class="image">
                     <img src="image/Algoritma Pemrograman Dan Struktur Data Menggunakan C++.png" alt="">
                 </div>
@@ -97,7 +97,7 @@
                         more info
                     </button>
                 </div>
-            </div>
+            </div> -->
             <div class="swiper-slide box">
                 <div class="image">
                     <img src="image/Buku Sakti HTML, CSS & Javascript Pemrograman Web Itu Gampang.png" alt="">
@@ -541,18 +541,22 @@
 <!-- deal section ends -->
     
 <!-- reviews section starts -->   
+<!-- reviews section ends -->
+
+<!-- reviews section starts -->   
 <section class="reviews" id="reviews">
     <h1 class="heading"> <span>reviews</span></h1>
-    <div class="swiper reviews-slider">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide box">
+    <div class="reviews-slider">
+        <div class="wrapper">
+            <div class="box">
                 <div class="image">
                     <img src="image/pic4.png" alt="">
                 </div>
                 <div class="content">
                     <h3>Indy</h3>
-                    <p>Tampilan webnya keren banget</p>
-                    <p>Mudah diakses</p>
+                    <p>Desain Simpel,</p>
+                    <p>Info Buku Lengkap.</p>
+                    <p>Keren!</p>
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -562,15 +566,15 @@
                     </div>
                 </div>
             </div>
-            <div class="swiper-slide box">
+            <div class="box">
                 <div class="image">
                     <img src="image/pic2.png" alt="">
                 </div>
                 <div class="content">
                     <h3>Zara</h3>
-                    <p>Lorem ipsum dolor sit amet</p>
-                    <p> consectetur, adipisicing</p>
-                    <p> elit.</p>
+                    <p>WOW</p>
+                    <p>Tampilan Ramah Pengguna</p>
+                    <p>Pilihan Buku Menarik</p>
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -580,15 +584,15 @@
                     </div>
                 </div>
             </div>
-            <div class="swiper-slide box">
+            <div class="box">
                 <div class="image">
-                    <img src="image/pic3.png" alt="">
+                    <img src="image/pic1.jpg" alt="">
                 </div>
                 <div class="content">
                     <h3>Tyo</h3>
-                    <p>Lorem ipsum dolor sit amet</p>
-                    <p> consectetur, adipisicing</p>
-                    <p> elit.</p>
+                    <p>Rekomendasi Buku IT?</p>
+                    <p>Cek Situs Ini!</p>
+                    <p>Praktis dan Informatif.</p>
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -602,6 +606,33 @@
     </div>
 </section>
 <!-- reviews section ends -->
+
+<!-- footer section starts -->
+<section class="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3>quick links</h3>
+            <a href=""> <i class="fas fa-arrow right"></i> home </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> featured </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> arrivals </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> reviews </a>
+        </div>
+        <div class="box">
+            <h3>contact info</h3>
+            <a href="#"> <i class="fas fa-phone"></i> +62 8211489302 </a>
+            <a href="#"> <i class="fas fa-envelope"></i> techbooks@gmail.com </a>
+        </div>
+    </div>
+    <div class="share">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-pinterest"></a>
+    </div>
+    <div class="credit"> created by <span>tyo, indy, zara</span></div>
+</section>
+</section>
+<!-- footer section ends -->
 
 
 

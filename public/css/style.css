@@ -196,7 +196,7 @@ html::-webkit-scrollbar-thumb{
 }
 
 body{
-    height: 400rem;
+    height: 300rem;
 }
 
 .home {
@@ -479,36 +479,122 @@ body{
     background-color: #21405a;
 }
 
-.reviews .reviews-slider .box{
+.reviews .reviews-slider .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Menengahkan box secara horizontal */
+    margin: 1rem;
+}
+
+.reviews .reviews-slider .box {
+    flex: 0 0 calc(33.33% - 1rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
     border: var(--border);
     padding: 2rem;
     text-align: center;
-    margin: 2rem 0;
+    margin: 0.5rem;
 }
 
-.reviews .reviews-slider .box:hover{
+.reviews .reviews-slider .box:hover {
     border: var(--border-hover);
 }
 
-.reviews .reviews-slider .box img{
+.reviews .reviews-slider .box img {
     height: 7rem;
     width: 7rem;
     border-radius: 50%;
     object-fit: cover;
 }
 
-.reviews .reviews-slider .box h3{
+.reviews .reviews-slider .box h3 {
     color: var(--black);
     font-size: 2rem;
 }
 
-.reviews .reviews-slider .box p{
+.reviews .reviews-slider .box p {
     color: var(--light-color);
     font-size: 1.2rem;
     line-height: 2;
 }
 
-.reviews .reviews-slider .box .stars i{
+.reviews .reviews-slider .box .stars i {
     font-size: 1.7rem;
     color: var(--navy);
+}
+
+.footer .box-container {
+    display: flex;
+    justify-content: center; /* Center the boxes horizontally */
+}
+
+.footer .box-container .box {
+    display: flex;
+    flex-direction: column;
+    margin: 0 3rem 0 0; /* Memberikan margin di antara setiap box (kanan) */
+}
+
+.footer .box-container .box:first-child {
+    margin-right: 35rem;
+}
+
+
+.footer .box-container .box h3 {
+    font-size: 2.2rem;
+    color: var(--navy);
+    padding: 1rem 0;
+    align-self: center; /* Menengahkan teks secara vertikal */
+}
+
+.footer .box-container .box a {
+    display: block;
+    font-size: 1.4rem;
+    color: var(--blue);
+    padding: 1rem 0;
+    align-self: center; /* Menengahkan teks secara vertikal */
+}
+
+.footer .box-container .box a i {
+    color: var(--blue);
+    padding-right: 0.5rem;
+}
+
+.footer .box-container .box a:hover i {
+    padding-right: 2rem;
+}
+
+.footer .share {
+    padding: 1rem;
+    text-align: center;
+}
+
+.footer .share a {
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    color: var(--navy);
+    background: var(--winter);
+    margin: 0 0.3rem;
+    border-radius: 50%;
+}
+
+.footer .share a:hover {
+    background: var(--cold);
+}
+
+.footer .credit {
+    border-top: var(--border);
+    margin-top: 2rem;
+    padding: 0 1rem;
+    padding-top: 2.5rem;
+    font-size: 2rem;
+    color: var(--blue);
+    text-align: center;
+}
+
+.footer .credit span {
+    color: var(--blue);
 }

@@ -16,6 +16,6 @@ use App\Models\Book;
 
 Route::get('/', function () {
     return view('index', [
-        'books'=>Book::Class->all()
+        
     ]);
 });
