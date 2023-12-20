@@ -17,19 +17,19 @@
     <!-- header section starts -->
     <header class="header">
         <div class="header-1">
-            <img src="img/logo.png" alt="">
+            <img src="image/logo.png" alt="">
             <span class="logo-text"> Tech Books </span>
-            <form action="/" class="search-form">
-                <input type="search" class="form-control" placeholder="Search..." name="search"
-                    value="{{ request('search') }}">
-                <button class="btn btn-custom" type="submit"><p class="search-icon fas fa-search" style="background-color: #fff"></p></button>
+            <form action="" class="search-form">
+                <input type="search" name="" placeholder="search here..." id="search-box">
+                <label for="search-box" class="search-icon fas fa-search"></label>
             </form>
         </div>
         <div class="header-2">
             <nav class="navbar">
-                <a href="#home" style="margin-right: 50px">home</a>
-                <a href="#featured" style="margin-right: 50px">featured books</a>
-                <a href="#arrivals" style="margin-right: 50px">new arrivals</a>
+                <a href="#home">home</a>
+                <a href="#featured">featured</a>
+                <a href="#arrivals">arrivals</a>
+                <a href="#reviews">reviews</a>
             </nav>
         </div>
     </header>
@@ -39,28 +39,28 @@
 <section class="home" id="home">
     <div class="row">
         <div class="content">
-            <h3>Welcome!</h3>
-            <p>Get new inspiration, let's explore the world of books with us.</p>
+            <h3>upto 75% off</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
         </div>
         <div class= "swiper-container home-slider">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <img src="img/7 in 1 Pemrograman Web Tingkat Lanjut.png" alt="Slide img">
+                        <img src="image/7 in 1 Pemrograman Web Tingkat Lanjut.png" alt="Slide image">
                     </div>
                     <div class="swiper-slide">
-                        <img src="img/Html Php & MySQL untuk Pemula.png" alt="Slide img">
+                        <img src="image/Html Php & MySQL untuk Pemula.png" alt="Slide image">
                     </div>
                     <div class="swiper-slide">
-                        <img src="img/Kitab Hacker.png" alt="Slide img">
+                        <img src="image/Kitab Hacker.png" alt="Slide image">
                     </div>
                     <div class="swiper-slide">
-                        <img src="img/Membuat Aplikasi Android Tanpa Coding.png" alt="Slide img">
+                        <img src="image/Membuat Aplikasi Android Tanpa Coding.png" alt="Slide image">
                     </div>
                     <div class="swiper-slide">
-                        <img src="img/Tingkatkan Profit Trading dengan ChatGPT.png" alt="Slide img">
+                        <img src="image/Tingkatkan Profit Trading dengan ChatGPT.png" alt="Slide image">
                     </div>
                     <div class="swiper-slide">
-                        <img src="img/Python untuk Programmer Pemula.png" alt="Slide img">
+                        <img src="image/Python untuk Programmer Pemula.png" alt="Slide image">
                     </div>
                 </div>
             </div>
@@ -68,36 +68,13 @@
     </div>
 </section>
 <!-- home section ense -->
-@if($books->count())
-<section class="featured" id="featured">
-    <h1 class="heading"> <span>{{$title}}</span> </h1>
-    <div class="swiper-container featured-slider">
-        <div class="swiper-wrapper">
-        @foreach ($books as $s)
-            <div class="swiper-slide box">
-                <div class="image">
-                    <img src="{{$s->image}}" alt="">
-                </div>
-                <div class="content">
-                    <h3>{{$s->judul}}</h3>
-                    <div class="price">{{$s->harga_diskon}} <span>{{$s->harga}}</span></div>
-                    <button id="infoButton" type="button" onclick="location.href={{$s->link}}">
-                        more info
-                    </button>
-                </div>
-            </div>
-        @endforeach
-        </div>
-    </div>
-@else
-<h1 class="heading" style="margin: 0 auto"> <span>Book not found.</span> </h1>
-@endif
+
 <!-- icons section strats -->
-{{-- <section class="featured" id="featured" style="padding-top: 40px;">
-    <h1 class="heading" style="padding-top: 20px"> <span>featured books</span> </h1>
+<section class="featured" id="featured">
+    <h1 class="heading"> <span>featured books</span> </h1>
     <div class="swiper-container featured-slider">
         <div class="swiper-wrapper">
-            <div class="swiper-slide box">
+            <!-- <div class="swiper-slide box">
                 <div class="image">
                     <img src="" alt="">
                 </div>
@@ -108,8 +85,8 @@
                         more info
                     </button>
                 </div>
-            </div>
-            <div class="swiper-slide box">
+            </div> -->
+            <!-- <div class="swiper-slide box">
                 <div class="image">
                     <img src="image/Algoritma Pemrograman Dan Struktur Data Menggunakan C++.png" alt="">
                 </div>
@@ -120,24 +97,142 @@
                         more info
                     </button>
                 </div>
-            </div>
-            @for($i = 0; $i < 10; $i++)
+            </div> -->
             <div class="swiper-slide box">
                 <div class="image">
-                    <img src="{{$all[$i]->image}}" alt="">
+                    <img src="image/Buku Sakti HTML, CSS & Javascript Pemrograman Web Itu Gampang.png" alt="">
                 </div>
                 <div class="content">
-                    <h3>{{$all[$i]->judul}}</h3>
-                    <div class="price">{{$all[$i]->harga_diskon}} <span>{{$all[$i]->harga}}</span></div>
-                    <button id="infoButton" type="button" onclick="location.href={{$all[$i]->link}}">
+                    <h3>Buku Sakti HTML, CSS & Javascript Pemrograman Web Itu Gampang</h3>
+                    <div class="price">Rp 60.000 <span> </span></div>
+                    <button id="infoButton" type="button" onclick="location.href='https://www.gramedia.com/products/buku-sakti-html-css-javascript-pemrograman-web-itu-gamp?queryID=d083f18dfe37f80c11cd4fbfeeefe5bf'">
                         more info
                     </button>
                 </div>
             </div>
-            @endfor
+            <div class="swiper-slide box">
+                <div class="image">
+                    <img src="image/Data Mining, Algoritma Dan Implementasi.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>Data Mining, Algoritma Dan Implementasi</h3>
+                    <div class="price">Rp 66.600 <span>Rp 74.000</span></div>
+                    <button id="infoButton" type="button" onclick="location.href='https://www.gramedia.com/products/data-mining-algoritma-dan-implementasi?queryID=0ec50484f94349ceb437c940b8c75b68'">
+                        more info
+                    </button>
+                </div>
+            </div>
+            <div class="swiper-slide box">
+                <div class="image">
+                    <img src="image/Firebase Membangun Aplikasi Berbasis Android.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>Firebase Membangun Aplikasi Berbasis Android</h3>
+                    <div class="price">Rp 51.300 <span>Rp 57.000</span></div>
+                    <button id="infoButton" type="button" onclick="location.href='https://www.gramedia.com/products/firebase-membangun-aplikasi-berbasis-android?queryID=332e7624c48ea2c7ad029c993fc10efd'">
+                        more info
+                    </button>
+                </div>
+            </div>
+            <div class="swiper-slide box">
+                <div class="image">
+                    <img src="image/Kitab Hacker.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>Kitab Hacker</h3>
+                    <div class="price">Rp 60.000 <span>Rp 75.000</span></div>
+                    <button id="infoButton" type="button" onclick="location.href='https://www.gramedia.com/products/kitab-hacker?queryID=3267c07b9862dd855894f36dd435d0bf'">
+                        more info
+                    </button>
+                </div>
+            </div>
+            <div class="swiper-slide box">
+                <div class="image">
+                    <img src="image/Koleksi Program Web PHP.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>Koleksi Program Web PHP</h3>
+                    <div class="price">Rp 76.000 <span>Rp 95.000</span></div>
+                    <button id="infoButton" type="button" onclick="location.href='https://www.gramedia.com/products/koleksi-program-web-php?queryID=c75ef7bb02d53629afec4d5726aeead0'">
+                        more info
+                    </button>
+                </div>
+            </div>
+            <div class="swiper-slide box">
+                <div class="image">
+                    <img src="image/Kumpulan Solusi Pemrograman Python Edisi Revisi.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>Kumpulan Solusi Pemrograman Python Edisi Revisi</h3>
+                    <div class="price">Rp 120.000 <span></span></div>
+                    <button id="infoButton" type="button" onclick="location.href='https://www.gramedia.com/products/kumpulan-solusi-pemrograman-python-edisi-revisi?queryID=ff64c968e5938ccdbfd1726cace2e0bd'">
+                        more info
+                    </button>
+                </div>
+            </div>
+            <div class="swiper-slide box">
+                <div class="image">
+                    <img src="image/Lancar Java & Javascript.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>Lancar Java & Javascript</h3>
+                    <div class="price">Rp 60.000 <span>Rp 75.000</span></div>
+                    <button id="infoButton" type="button" onclick="location.href='https://www.gramedia.com/products/lancar-java-dan-javascript?queryID=280343ad9395c6cab79362f9241ae723'">
+                        more info
+                    </button>
+                </div>
+            </div>
+            <div class="swiper-slide box">
+                <div class="image">
+                    <img src="image/Logika Pemrograman Python.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>Logika Pemrograman Python</h3>
+                    <div class="price">Rp 112.000 <span>Rp 140.000</span></div>
+                    <button id="infoButton" type="button" onclick="location.href='https://www.gramedia.com/products/logika-pemrograman-python?queryID=fbf0f3dfeba618a76caef21431db616e'">
+                        more info
+                    </button>
+                </div>
+            </div>
+            <div class="swiper-slide box">
+                <div class="image">
+                    <img src="image/Pemrograman Python untuk Penanganan Big Data.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>Pemrograman Python untuk Penanganan Big Data</h3>
+                    <div class="price">Rp 66.600 <span>Rp 74.000</span></div>
+                    <button id="infoButton" type="button" onclick="location.href='https://www.gramedia.com/products/pemrograman-python-untuk-penanganan-big-data?queryID=e03a0336ddefd675c415d2e3231bef8a'">
+                        more info
+                    </button>
+                </div>
+            </div>
+            <div class="swiper-slide box">
+                <div class="image">
+                    <img src="image/Pengenalan Machine Learning dengan Python.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>Pengenalan Machine Learning dengan Python</h3>
+                    <div class="price">Rp 68.000 <span>Rp 85.000</span></div>
+                    <button id="infoButton" type="button" onclick="location.href='https://www.gramedia.com/products/pengenalan-machine-learning-dengan-python?queryID=4349e8c6b61c7c3a136903acc6d4e67e'">
+                        more info
+                    </button>
+                </div>
+            </div>
+            <div class="swiper-slide box">
+                <div class="image">
+                    <img src="image/Semua Bisa Menjadi Programmer Python Case Study.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>Semua Bisa Menjadi Programmer Python Case Study</h3>
+                    <div class="price">Rp 57.600 <span>Rp 72.000</span></div>
+                    <button id="infoButton" type="button" onclick="location.href='https://www.gramedia.com/products/semua-bisa-menjadi-programmer-python-case-study?queryID=cf9447b61280c1225621fe0260e91d35'">
+                        more info
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
-</section> --}}
+</section>
 <!-- icons section ends -->
 
 <!-- arrivals section starts -->
@@ -147,7 +242,7 @@
         <div class="swiper-wrapper">
             <a href="#" class="swiper-slide box">
                 <div class="image">
-                    <img src="img/Amazon Web Services (AWS) untuk Pemula.png" alt="">
+                    <img src="image/Amazon Web Services (AWS) untuk Pemula.png" alt="">
                 </div>
                 <div class="content">
                     <h3>Amazon Web Services</h3>
@@ -160,7 +255,7 @@
             </a>
             <a href="#" class="swiper-slide box">
                 <div class="image">
-                    <img src="img/Html Php & MySQL untuk Pemula.png" alt="">
+                    <img src="image/Html Php & MySQL untuk Pemula.png" alt="">
                 </div>
                 <div class="content">
                     <h3>Html Php & MySQL</h3>
@@ -173,7 +268,7 @@
             </a>
             <a href="#" class="swiper-slide box">
                 <div class="image">
-                    <img src="img/Ilmu Hacking.png" alt="">
+                    <img src="image/Ilmu Hacking.png" alt="">
                 </div>
                 <div class="content">
                     <h3>Ilmu Hacking</h3>
@@ -185,7 +280,7 @@
             </a>
             <a href="#" class="swiper-slide box">
                 <div class="image">
-                    <img src="img/Koleksi Aplikasi Web Laravel.png" alt="">
+                    <img src="image/Koleksi Aplikasi Web Laravel.png" alt="">
                 </div>
                 <div class="content">
                     <h3>Koleksi Aplikasi Web Laravel</h3>
@@ -201,7 +296,7 @@
         <div class="swiper-wrapper">
             <a href="#" class="swiper-slide box">
                 <div class="image">
-                    <img src="img/Kumpulan Latihan VB.Net.png" alt="">
+                    <img src="image/Kumpulan Latihan VB.Net.png" alt="">
                 </div>
                 <div class="content">
                     <h3>Kumpulan Latihan VB.Net</h3>
@@ -213,7 +308,7 @@
             </a>
             <a href="#" class="swiper-slide box">
                 <div class="image">
-                    <img src="img/Logika Pemrograman Java (Update Version).png" alt="">
+                    <img src="image/Logika Pemrograman Java (Update Version).png" alt="">
                 </div>
                 <div class="content">
                     <h3>Logika Pemrograman</h3>
@@ -226,7 +321,7 @@
             </a>
             <a href="#" class="swiper-slide box">
                 <div class="image">
-                    <img src="img/Mudahnya Membuat Web e-Learning Berbasis Web dan Android.png" alt="">
+                    <img src="image/Mudahnya Membuat Web e-Learning Berbasis Web dan Android.png" alt="">
                 </div>
                 <div class="content">
                     <h3>Mudahnya Membuat Web</h3>
@@ -240,7 +335,7 @@
             </a>
             <a href="#" class="swiper-slide box">
                 <div class="image">
-                    <img src="img/Pemrograman Graphical User Interface Menggunakan Python & PySimpleGUI.png" alt="">
+                    <img src="image/Pemrograman Graphical User Interface Menggunakan Python & PySimpleGUI.png" alt="">
                 </div>
                 <div class="content">
                     <h3>Pemrograman Graphical</h3>
@@ -258,7 +353,7 @@
         <div class="swiper-wrapper">
             <a href="#" class="swiper-slide box">
                 <div class="image">
-                    <img src="img/Python untuk Analisis dan Visualisasi Data.png" alt="">
+                    <img src="image/Python untuk Analisis dan Visualisasi Data.png" alt="">
                 </div>
                 <div class="content">
                     <h3>Python untuk Analisis</h3>
@@ -271,7 +366,7 @@
             </a>
             <a href="#" class="swiper-slide box">
                 <div class="image">
-                    <img src="img/Tingkatkan Profit Trading dengan ChatGPT.png" alt="">
+                    <img src="image/Tingkatkan Profit Trading dengan ChatGPT.png" alt="">
                 </div>
                 <div class="content">
                     <h3>Tingkatkan Profit Trading</h3>
@@ -284,7 +379,7 @@
             </a>
             <a href="#" class="swiper-slide box">
                 <div class="image">
-                    <img src="img/Belajar Pemrograman Python untuk Guru dan Murid.png" alt="">
+                    <img src="image/Belajar Pemrograman Python untuk Guru dan Murid.png" alt="">
                 </div>
                 <div class="content">
                     <h3>Belajar Pemrograman</h3>
@@ -298,7 +393,7 @@
             </a>
             <a href="#" class="swiper-slide box">
                 <div class="image">
-                    <img src="img/Dasar-Dasar Graph Machine Learning.png" alt="">
+                    <img src="image/Dasar-Dasar Graph Machine Learning.png" alt="">
                 </div>
                 <div class="content">
                     <h3>Dasar-Dasar Graph</h3>
@@ -315,7 +410,7 @@
         <div class="swiper-wrapper">
             <a href="#" class="swiper-slide box">
                 <div class="image">
-                    <img src="img/Mudah Membuat Animasi dan Game dengan Visual Basic.png" alt="">
+                    <img src="image/Mudah Membuat Animasi dan Game dengan Visual Basic.png" alt="">
                 </div>
                 <div class="content">
                     <h3>Mudah Membuat</h3>
@@ -329,7 +424,7 @@
             </a>
             <a href="#" class="swiper-slide box">
                 <div class="image">
-                    <img src="img/PHP Edisi Lengkap.png" alt="">
+                    <img src="image/PHP Edisi Lengkap.png" alt="">
                 </div>
                 <div class="content">
                     <h3>PHP Edisi Lengkap</h3>
@@ -341,7 +436,7 @@
             </a>
             <a href="#" class="swiper-slide box">
                 <div class="image">
-                    <img src="img/Belajar Sendiri Mengolah Data Dengan Python Dan Pandas.png" alt="">
+                    <img src="image/Belajar Sendiri Mengolah Data Dengan Python Dan Pandas.png" alt="">
                 </div>
                 <div class="content">
                     <h3>Belajar Sendiri Mengolah</h3>
@@ -355,7 +450,7 @@
             </a>
             <a href="#" class="swiper-slide box">
                 <div class="image">
-                    <img src="img/Dasar Logika Pemrograman Komputer (Update Version).png" alt="">
+                    <img src="image/Dasar Logika Pemrograman Komputer (Update Version).png" alt="">
                 </div>
                 <div class="content">
                     <h3>Dasar Logika Pemrograman</h3>
@@ -372,7 +467,7 @@
         <div class="swiper-wrapper">
             <a href="#" class="swiper-slide box">
                 <div class="image">
-                    <img src="img/Logika Pemrograman Menggunakan Java.png" alt="">
+                    <img src="image/Logika Pemrograman Menggunakan Java.png" alt="">
                 </div>
                 <div class="content">
                     <h3>Logika Pemrograman</h3>
@@ -385,7 +480,7 @@
             </a>
             <a href="#" class="swiper-slide box">
                 <div class="image">
-                    <img src="img/Membuat Aplikasi Android Tanpa Coding.png" alt="">
+                    <img src="image/Membuat Aplikasi Android Tanpa Coding.png" alt="">
                 </div>
                 <div class="content">
                     <h3>Membuat Aplikasi Android</h3>
@@ -398,7 +493,7 @@
             </a>
             <a href="#" class="swiper-slide box">
                 <div class="image">
-                    <img src="img/Mengembalikan Data yang Hilang.png" alt="">
+                    <img src="image/Mengembalikan Data yang Hilang.png" alt="">
                 </div>
                 <div class="content">
                     <h3>Mengembalikan Data</h3>
@@ -411,7 +506,7 @@
             </a>
             <a href="#" class="swiper-slide box">
                 <div class="image">
-                    <img src="img/Rekayasa Perangkat Lunak Berorientasi Objek Menggunakan PHP.png" alt="">
+                    <img src="image/Rekayasa Perangkat Lunak Berorientasi Objek Menggunakan PHP.png" alt="">
                 </div>
                 <div class="content">
                     <h3>Rekayasa Perangkat</h3>
@@ -440,50 +535,71 @@
         </button>
     </div>
     <div class="image">
-        <img src="img/7 in 1 Pemrograman Web Tingkat Lanjut.png" alt="">
+        <img src="image/7 in 1 Pemrograman Web Tingkat Lanjut.png" alt="">
     </div>
 </section>
 <!-- deal section ends -->
+    
+<!-- reviews section starts -->   
+<!-- reviews section ends -->
 
 <!-- reviews section starts -->   
 <section class="reviews" id="reviews">
-    <h1 class="heading"> <span>our founder</span></h1>
+    <h1 class="heading"> <span>reviews</span></h1>
     <div class="reviews-slider">
         <div class="wrapper">
             <div class="box">
                 <div class="image">
-                    <img src="img/pic4.png" alt="">
-                </div>
-                <div class="content">
-                    <h3>Tyo</h3>
-                    <p>Saya ingin website ini menjadi wadah yang dapat</p>
-                    <p>diandalkan bagi setiap pembaca, sehingga dapat</p>
-                    <p>membantu mereka menemukan buku yang sesuai</p>
-                    <p>prefrensi agar mendapatkan wawasan yang berharga.</p>
-                </div>
-            </div>
-            <div class="box">
-                <div class="image">
-                    <img src="img/pic2.png" alt="">
+                    <img src="image/pic4.png" alt="">
                 </div>
                 <div class="content">
                     <h3>Indy</h3>
-                    <p>Harapan saya untuk website ini semoga dapat</p>
-                    <p>menjadi sumber refrensi dan pengetahuan bagi pengguna,</p>
-                    <p>serta dapat memberikan kontribusi positif melalui</p>
-                    <p>rekomendasi yang kami tawarkan.</p>
+                    <p>Desain Simpel,</p>
+                    <p>Info Buku Lengkap.</p>
+                    <p>Keren!</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
                 </div>
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="img/pic1.jpg" alt="">
+                    <img src="image/pic2.png" alt="">
                 </div>
                 <div class="content">
                     <h3>Zara</h3>
-                    <p>Semoga website ini tidak hanya menyediakan rekomendasi</p>
-                    <p>buku, tetapi juga menjadi kompas untuk menggali ragam</p>
-                    <p>pengetahuan, memperluas pandangan, dan memupuk</p>
-                    <p>kecintaan terhadap dunia literasi.</p>
+                    <p>WOW</p>
+                    <p>Tampilan Ramah Pengguna</p>
+                    <p>Pilihan Buku Menarik</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="image/pic1.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Tyo</h3>
+                    <p>Rekomendasi Buku IT?</p>
+                    <p>Cek Situs Ini!</p>
+                    <p>Praktis dan Informatif.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
                 </div>
             </div>
         </div>
@@ -519,66 +635,7 @@
 <!-- footer section ends -->
 
 
-<style>
-@media (max-width: 1024px) {
-    .header .header-1{
-        padding: 2rem;
-    }
-    .section{
-        padding: 3rem 2rem;
-    }
-}
-@media (max-width: 480px){
-    html{
-        scroll-padding-top: 0;
-    }
-    body{
-        padding-bottom: 6rem;
-    }
-    .header .header-2{
-        display: none;
-    }
-    .bottom-navbar{
-        display: flex;
-    }
-    #search-form{
-        display: inline-block;
-    }
-    .header .header-1{
-        box-shadow: var(--box-shadow);
-        position: relative;
-    }
-    .header .header-1 .search-form{
-        position: absolute;
-        top: -115%; right: 2rem;
-        width: 90%;
-        box-shadow: var(--box-shadow);
-    }
-    .header .header-1 .search-form.active{
-        top: 115;
-    }
-    .home .row .content{
-        align-items: center;
-    }
-    .home .row .content h3{
-        font-size: 3.5rem;
-    }
-    .newsletter{
-        background-position: right;
-    }
-    .newsletter form{
-        margin-left: 0;
-        max-width: 100%;
-    }
-}
-@media (max-width: 320px){
-    html{
-        font-size: 50%;
-    }
-}
 
-
-</style>
 
 
 

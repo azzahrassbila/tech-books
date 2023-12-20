@@ -15,7 +15,14 @@ use App\Models\Book;
 */
 
 Route::get('/', function () {
+    $title = 'Featured Books';
+    $books = Book::latest();
+    if(request('search')){
+        $books->where('judul', 'like', '%'.request('search').'%');
+        $title = "Hasil Pencarian";
+    }
     return view('index', [
-        
+        'books' => $books->get(),
+        'title' => $title
     ]);
 });
